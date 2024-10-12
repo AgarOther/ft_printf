@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 21:10:41 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/11 22:48:00 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/10/12 09:48:14 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int		is_corrupted(char *str);
 int		ft_intlen(int n);
 int		ft_print_hexadecimal(int n, int is_upper);
 char	*ft_strlower(char *str);
-char	*ft_strdup(const char *s);
+char	*ft_strdup(const char *s, int is_upper);
 #endif

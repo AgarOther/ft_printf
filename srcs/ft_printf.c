@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 21:10:01 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/11 22:47:27 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/10/12 09:53:05 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int	ft_printf(const char *input, ...)
 
 int	main(void)
 {
-	print_hexadecimal(454, 0);
+	ft_print_hexadecimal(454, 0);
+	ft_putchar('\n');
 	//printf("\n%d\n", ft_printf(" %d"));
 	//printf("\n%d\n", printf(" %d"));
 }

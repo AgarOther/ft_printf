@@ -6,13 +6,13 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:04:36 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/11 22:40:44 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/10/12 09:47:55 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strdup(const char *s, int is_upper)
 {
 	int		i;
 	char	*str;
@@ -27,5 +27,7 @@ char	*ft_strdup(const char *s)
 		i++;
 	}
 	str[i] = '\0';
+	if (!is_upper)
+		ft_strlower(str);
 	return (str);
 }
