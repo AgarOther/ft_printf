@@ -6,18 +6,18 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 21:15:43 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/11 22:49:05 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/10/12 10:11:51 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-char	get_converter(char *str)
+char	get_converter(const char *str)
 {
 	return (str[1]);
 }
 
-int	is_conversion(char *c)
+int	is_conversion(const char *c)
 {
 	if (c[0] != '%')
 		return (0);
@@ -26,7 +26,7 @@ int	is_conversion(char *c)
 		|| c[1] == '%');
 }
 
-int	count_conversions(char *str)
+int	count_conversions(const char *str)
 {
 	int	i;
 	int	count;
@@ -42,7 +42,7 @@ int	count_conversions(char *str)
 	return (count);
 }
 
-int	print_conversion(char *str, va_list arg)
+int	print_conversion(const char *str, va_list arg)
 {
 	char	c;
 	int		val;
@@ -70,7 +70,7 @@ int	print_conversion(char *str, va_list arg)
 	return (val);
 }
 
-int	is_corrupted(char *str)
+int	is_corrupted(const char *str)
 {
 	int	i;
 
