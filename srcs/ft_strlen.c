@@ -6,11 +6,11 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 13:12:45 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/11 21:47:57 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/10/12 11:54:01 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_strlen(const char *s)
 {

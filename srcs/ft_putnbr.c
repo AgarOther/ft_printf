@@ -6,11 +6,11 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:09:21 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/11 22:45:18 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/10/12 11:53:56 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_intlen(int n)
 {

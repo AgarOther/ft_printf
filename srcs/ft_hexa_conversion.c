@@ -6,11 +6,11 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 22:19:16 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/12 10:19:17 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/10/12 12:01:24 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static char	*ft_revstr(char *str)
 {
@@ -58,7 +58,7 @@ int	ft_print_hexadecimal(int n, int is_upper)
 	char	*str;
 	int		val;
 
-	hex = ft_strdup("0123456789ABCDEF", is_upper);
+	hex = "0123456789ABCDEF";
 	if (n == 0)
 	{
 		ft_putchar('0');
@@ -69,11 +69,50 @@ int	ft_print_hexadecimal(int n, int is_upper)
 	if (!str)
 		return (-1);
 	if (!is_upper)
-		hex = ft_strlower(hex);
+		hex = "0123456789abcdef";
 	str = get_hex_str(hex, n, val, str);
-	free(hex);
 	ft_putstr(str);
 	val = ft_strlen(str) + (n < 0);
+	free(str);
+	return (val);
+}
+
+static char	*get_ptr_str(char *hex, unsigned long n, char *str)
+{
+	int	i;
+
+	i = 0;
+	while (n > 0)
+	{
+		str[i] = (hex[n % 16]);
+		n /= 16;
+		i++;
+	}
+	str[i] = 0;
+	str = ft_revstr(str);
+	return (str);
+}
+
+int	ft_print_ptr(unsigned long n)
+{
+	char	*hex;
+	char	*str;
+	int		val;
+
+	hex = "0123456789abcdef";
+	ft_putstr("0x");
+	val = ft_intlen(n) + 2;
+	if (n == 0)
+	{
+		ft_putchar('0');
+		return (val);
+	}
+	str = malloc(val + 1);
+	if (!str)
+		return (-1);
+	str = get_ptr_str(hex, n, str);
+	ft_putstr(str);
+	//ft_strlen(str);
 	free(str);
 	return (val);
 }

@@ -6,11 +6,11 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 21:15:43 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/12 10:11:51 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/10/12 11:53:46 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 char	get_converter(const char *str)
 {
@@ -54,10 +54,8 @@ int	print_conversion(const char *str, va_list arg)
 	else if (c == 's')
 		val += ft_putstr(va_arg(arg, char *));
 	else if (c == 'p')
-		(void)c; // Hexa conversion
-	else if (c == 'd') // Similar to i?
-		val += ft_putnbr(va_arg(arg, int));
-	else if (c == 'i')
+		ft_print_ptr(va_arg(arg, unsigned long));
+	else if (c == 'd' || c == 'i')
 		val += ft_putnbr(va_arg(arg, int));
 	else if (c == 'u')
 		val += ft_putnbr(va_arg(arg, unsigned int));
@@ -83,5 +81,7 @@ int	is_corrupted(const char *str)
 			return (1);
 		i++;
 	}
+	if (str[i] == '%' && str[i - 1] != '%')
+		return (1);
 	return (0);
 }

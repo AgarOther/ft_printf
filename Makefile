@@ -8,8 +8,6 @@ SRCS = \
 	srcs/ft_putchar.c \
 	srcs/ft_putnbr.c \
 	srcs/ft_strlen.c \
-	srcs/ft_strdup.c \
-	srcs/ft_strlower.c \
 	srcs/ft_hexa_conversion.c
 INCLUDES = \
 	includes/
