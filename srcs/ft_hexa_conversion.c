@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 22:19:16 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/12 10:08:31 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/10/12 10:19:17 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static char	*ft_revstr(char *str)
 	int		i;
 	int		len;
 	char	temp;
-	
+
 	i = 0;
 	len = ft_strlen(str);
 	while (i < len / 2)
@@ -73,6 +73,7 @@ int	ft_print_hexadecimal(int n, int is_upper)
 	str = get_hex_str(hex, n, val, str);
 	free(hex);
 	ft_putstr(str);
+	val = ft_strlen(str) + (n < 0);
 	free(str);
 	return (val);
 }
