@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 21:10:01 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/12 19:18:44 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/10/12 19:35:01 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,3 @@ int	ft_printf(const char *input, ...)
 	va_end(args);
 	return (val);
 }
-/*#include <limits.h>
-#include <stdio.h>
-int	main(void)
-{
-	printf("\nPrinted: \n%d\n", ft_printf(" %x ", LONG_MAX));
-	printf("\nPrinted: \n%d\n", printf(" %x ", LONG_MAX));
-}*/
