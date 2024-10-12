@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 22:19:16 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/12 12:01:24 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/10/12 19:17:49 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,11 @@ static char	*ft_revstr(char *str)
 	return (str);
 }
 
-static char	*get_hex_str(char *hex, int n, int val, char *str)
+static char	*get_hex_str(char *hex, unsigned int n, char *str)
 {
 	int	i;
 
 	i = 0;
-	if (n < 0)
-	{
-		n *= -1;
-		val++;
-		ft_putchar('-');
-	}
 	while (n > 0)
 	{
 		str[i] = (hex[n % 16]);
@@ -52,7 +46,7 @@ static char	*get_hex_str(char *hex, int n, int val, char *str)
 	return (str);
 }
 
-int	ft_print_hexadecimal(int n, int is_upper)
+int	ft_print_hexadecimal(unsigned int n, int is_upper)
 {
 	char	*hex;
 	char	*str;
@@ -64,15 +58,15 @@ int	ft_print_hexadecimal(int n, int is_upper)
 		ft_putchar('0');
 		return (1);
 	}
-	val = ft_intlen(n);
+	val = ft_longlen(n);
 	str = malloc(val + 1);
 	if (!str)
 		return (-1);
 	if (!is_upper)
 		hex = "0123456789abcdef";
-	str = get_hex_str(hex, n, val, str);
+	str = get_hex_str(hex, n, str);
 	ft_putstr(str);
-	val = ft_strlen(str) + (n < 0);
+	val = ft_strlen(str);
 	free(str);
 	return (val);
 }
@@ -99,20 +93,20 @@ int	ft_print_ptr(unsigned long n)
 	char	*str;
 	int		val;
 
-	hex = "0123456789abcdef";
-	ft_putstr("0x");
-	val = ft_intlen(n) + 2;
 	if (n == 0)
 	{
-		ft_putchar('0');
-		return (val);
+		ft_putstr("(nil)");
+		return (5);
 	}
+	hex = "0123456789abcdef";
+	ft_putstr("0x");
+	val = ft_longlen(n) + 2;
 	str = malloc(val + 1);
 	if (!str)
 		return (-1);
 	str = get_ptr_str(hex, n, str);
 	ft_putstr(str);
-	//ft_strlen(str);
+	val = ft_strlen(str) + 2;
 	free(str);
 	return (val);
 }

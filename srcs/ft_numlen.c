@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 14:05:57 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/12 18:18:58 by scraeyme         ###   ########.fr       */
+/*   Created: 2024/10/12 18:24:22 by scraeyme          #+#    #+#             */
+/*   Updated: 2024/10/12 19:15:36 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_intlen(int n)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	if (!s)
+	len = 1;
+	if (n <= -2147483648)
+		return (10);
+	n *= (1 + -2 * (n < 0));
+	while (n > 9)
 	{
-		ft_putstr("(null)");
-		return (6);
+		n /= 10;
+		len++;
 	}
-	while (s[i])
+	return (len);
+}
+
+int	ft_longlen(size_t n)
+{
+	int	len;
+
+	len = 1;
+	while (n > 9)
 	{
-		write(1, &s[i], 1);
-		i++;
+		n /= 10;
+		len++;
 	}
-	return (i);
+	return (len);
 }

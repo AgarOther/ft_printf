@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 21:15:43 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/12 11:53:46 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/10/12 19:18:07 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,15 @@ int	print_conversion(const char *str, va_list arg)
 	else if (c == 's')
 		val += ft_putstr(va_arg(arg, char *));
 	else if (c == 'p')
-		ft_print_ptr(va_arg(arg, unsigned long));
+		val += ft_print_ptr(va_arg(arg, unsigned long));
 	else if (c == 'd' || c == 'i')
 		val += ft_putnbr(va_arg(arg, int));
 	else if (c == 'u')
-		val += ft_putnbr(va_arg(arg, unsigned int));
+		val += ft_putlong(va_arg(arg, unsigned int));
 	else if (c == 'x')
-		val += ft_print_hexadecimal(va_arg(arg, int), 0);
+		val += ft_print_hexadecimal(va_arg(arg, unsigned int), 0);
 	else if (c == 'X')
-		val += ft_print_hexadecimal(va_arg(arg, int), 1);
+		val += ft_print_hexadecimal(va_arg(arg, unsigned int), 1);
 	else if (c == '%')
 		val += ft_putchar('%');
 	return (val);
@@ -77,6 +77,11 @@ int	is_corrupted(const char *str)
 		return (1);
 	while (str[i + 1])
 	{
+		if (i > 0 && str[i - 1] == '%' && str[i] == '%')
+		{
+			i++;
+			continue ;
+		}
 		if (!is_conversion(&str[i]) && str[i] == '%')
 			return (1);
 		i++;

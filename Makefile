@@ -8,7 +8,8 @@ SRCS = \
 	srcs/ft_putchar.c \
 	srcs/ft_putnbr.c \
 	srcs/ft_strlen.c \
-	srcs/ft_hexa_conversion.c
+	srcs/ft_hexa_conversion.c \
+	srcs/ft_numlen.c
 INCLUDES = \
 	includes/
 OBJS = $(SRCS:.c=.o)
