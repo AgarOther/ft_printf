@@ -20,9 +20,6 @@ all : $(NAME)
 
 $(NAME) : $(OBJS)
 	ar -rc $(NAME) $(OBJS)
-	
-bonus : $(OBJS)
-	ar -rc $(NAME) $?
 
 clean :
 	rm -f $(OBJS)
