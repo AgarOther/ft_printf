@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 21:10:01 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/16 13:55:46 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:42:11 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int	ft_printf(const char *input, ...)
 	return (val);
 }
 
-// int	main(void)
-// {
-// 	printf("\n%d\n", printf("oul%s    %", "caca"));
-// 	write(1, "\n", 1);
-// 	printf("\n%d\n", ft_printf("oul%s    %", "caca"));
-// }
+int	main(void)
+{
+	printf("\n%d\n", printf("oul%s    % yyyyyyyyyy", "aoui"));
+	write(1, "\n", 1);
+	printf("\n%d\n", ft_printf("oul%s    % yyyyyyyyyy", "aoui"));
+}

@@ -6,7 +6,7 @@
 /*   By: scraeyme <scraeyme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 21:15:43 by scraeyme          #+#    #+#             */
-/*   Updated: 2024/10/16 13:49:39 by scraeyme         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:40:35 by scraeyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,34 +68,16 @@ int	print_conversion(const char *str, va_list arg)
 	return (val);
 }
 
-// int	is_corrupted(const char *str)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	if (!str || (ft_strlen(str) == 1 && str[0] == '%'))
-// 		return (1);
-// 	while (str[i + 1])
-// 	{
-// 		if (i > 0 && str[i - 1] == '%' && str[i] == '%')
-// 		{
-// 			i++;
-// 			continue ;
-// 		}
-// 		if (!is_conversion(&str[i]) && str[i] == '%')
-// 			return (1);
-// 		i++;
-// 	}
-// 	if (str[i] == '%' && str[i - 1] != '%')
-// 		return (1);
-// 	return (0);
-// }
-
-int	is_corrupted(const char *str)
+/*int	is_corrupted(const char *str)
 {
 	if (!str || (ft_strlen(str) == 1 && str[0] == '%'))
 		return (1);
 	if (!is_conversion(str) && str[0] == '%')
 		return (1);
 	return (0);
+}*/
+
+int	is_corrupted(const char *str)
+{
+	return (str[0] == '%' && !str[1]);
 }
