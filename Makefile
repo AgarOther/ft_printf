@@ -1,8 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
-SRCS = \
-	srcs/ft_printf.c \
+SRCS =  srcs/ft_printf.c \
 	srcs/ft_printf_utils.c \
 	srcs/ft_putstr.c \
 	srcs/ft_putchar.c \
@@ -10,8 +9,7 @@ SRCS = \
 	srcs/ft_strlen.c \
 	srcs/ft_hexa_conversion.c \
 	srcs/ft_numlen.c
-INCLUDES = \
-	includes/
+INCLUDES = includes
 OBJS = $(SRCS:.c=.o)
 
 all : $(NAME)
