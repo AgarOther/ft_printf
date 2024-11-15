@@ -68,15 +68,6 @@ int	print_conversion(const char *str, va_list arg)
 	return (val);
 }
 
-/*int	is_corrupted(const char *str)
-{
-	if (!str || (ft_strlen(str) == 1 && str[0] == '%'))
-		return (1);
-	if (!is_conversion(str) && str[0] == '%')
-		return (1);
-	return (0);
-}*/
-
 int	is_corrupted(const char *str)
 {
 	return (str[0] == '%' && !str[1]);
